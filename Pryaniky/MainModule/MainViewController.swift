@@ -80,7 +80,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .selector:
             let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellSelector.cellId,
                                                                    for: indexPath) as! CustomCellSelector
-            recievedObjectsFromData[indexPath.row].data.variants?.forEach{
+            recievedObjectsFromData[indexPath.row].data.variants?.forEach {
                 cell.segmentedControl.insertSegment(action: alertToSelectedVariantInCell(withTitle: $0.text,
                                                                                          variant: $0),
                                                     at: $0.id,
