@@ -22,7 +22,7 @@ struct ObjectData: Codable {
     let url: String?
     let selectedID: Int?
     let variants: [Variant]?
-
+    
     enum CodingKeys: String, CodingKey {
         case text, url
         case selectedID = "selectedId"

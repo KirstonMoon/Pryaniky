@@ -10,8 +10,6 @@ import UIKit
 private enum Constants: String {
     case questionMark = "questionmark"
     case ok = "OK"
-    case objectInitiated = " объект инициировал событие"
-    case idInitiated = " id инициировал событие"
 }
 
 final class MainViewController: UIViewController {
@@ -30,8 +28,6 @@ final class MainViewController: UIViewController {
                 self?.recievedObjectsFromData = objects
             }
         }
-        
-        
     }
     
     override func loadView() {
@@ -110,7 +106,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 private extension MainViewController {
     
     func alertToSelectedElementInCollectionView(withTitle: String) {
-        let alertController = UIAlertController(title: withTitle + Constants.objectInitiated.rawValue,
+        let alertController = UIAlertController(title: "Объект \(withTitle) инициировал событие",
                                                 message: nil,
                                                 preferredStyle: .alert)
         
@@ -120,16 +116,19 @@ private extension MainViewController {
     }
     
     func alertToSelectedVariantInCell(withTitle: String, variant: Variant) -> UIAction {
+        
+        let alertController = UIAlertController(title: "id: \(variant.id) инициировал событие",
+                                                message: nil,
+                                                preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: Constants.ok.rawValue, style: .default)
+        alertController.addAction(alertAction)
+        
+        
         let action = UIAction(title: withTitle,
                               attributes: .destructive,
                               state: .on,
                               handler: { _ in
-                                let alertController = UIAlertController(title: variant.id.description + Constants.idInitiated.rawValue,
-                                                                        message: nil,
-                                                                        preferredStyle: .alert)
-
-                                let alertAction = UIAlertAction(title: Constants.ok.rawValue, style: .default)
-                                alertController.addAction(alertAction)
                                 self.present(alertController, animated: true) })
         return action
     }
