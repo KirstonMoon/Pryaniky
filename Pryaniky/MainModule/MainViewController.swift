@@ -19,10 +19,12 @@ final class MainViewController: UIViewController {
     
     var viewModel: MainViewModel? {
         didSet {
-            viewModel?.dataDidSet = { [weak self] viewModel in
-                self?.recievedObjectsFromData = viewModel.allObjects
+            viewModel?.dataDidSet = { [weak self] objects in
+                self?.recievedObjectsFromData = objects
             }
         }
+        
+        
     }
     
     override func loadView() {
