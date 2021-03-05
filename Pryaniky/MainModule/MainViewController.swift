@@ -59,11 +59,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellPicture.cellId,
                                                                    for: indexPath) as! CustomCellPicture
             
-            guard let dataString = recievedObjectsFromData[indexPath.row].data.url,
-                  let url = URL(string: dataString)
-            else { fatalError("Ошибка в создании ячейки с изображением") }
+            guard let urlString = recievedObjectsFromData[indexPath.row].data.url,
+                  let url = URL(string: urlString),
+                  let data = try? Data(contentsOf: url)
+            else { cell.imageView.image = UIImage(systemName: "questionmark"); return cell }
             
-            cell.imageView.image = UIImage(data: try! Data(contentsOf: url))
+            cell.imageView.image = UIImage(data: data)
             
             return cell
             
@@ -117,7 +118,7 @@ private extension MainViewController {
                                 let alertController = UIAlertController(title: "id \(variant.id) инициировал событие",
                                                                         message: nil,
                                                                         preferredStyle: .alert)
-                                
+
                                 let alertAction = UIAlertAction(title: "OK", style: .default)
                                 alertController.addAction(alertAction)
                                 self.present(alertController, animated: true) })

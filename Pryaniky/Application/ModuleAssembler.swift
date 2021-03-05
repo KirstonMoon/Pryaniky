@@ -8,19 +8,14 @@
 import UIKit
 import Alamofire
 
-protocol Builder {
-    
-    static func createMainVC() -> UIViewController
-}
-
-final class ModuleBuilder: Builder {
+enum ModuleAssembler {
     
     static func createMainVC() -> UIViewController {
         
         let view = MainViewController()
         let networkService = AF.request("https://pryaniky.com/static/json/sample.json", method: .get)
-        
         let viewModel = MainViewModel(networkService: networkService)
+        
         view.viewModel = viewModel
         
         return view
