@@ -9,16 +9,9 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    override func loadView() {
-        view = MainView()
-    }
+    private let mainView = MainView()
     
-    private var mainView: MainView {
-        guard let view = view as? MainView else { fatalError("Не удалось отобразить View")}
-        return view
-    }
-    
-    private var recievedObjectsFromData: [Objects]? {
+    private var recievedObjectsFromData = [Objects]() {
         didSet {
             mainView.collectionView.reloadData()
         }
@@ -26,10 +19,14 @@ final class MainViewController: UIViewController {
     
     var viewModel: MainViewModel? {
         didSet {
-            self.viewModel?.dataDidSet = { [weak self] viewModel in
+            viewModel?.dataDidSet = { [weak self] viewModel in
                 self?.recievedObjectsFromData = viewModel.allObjects
             }
         }
+    }
+    
+    override func loadView() {
+        view = mainView
     }
     
     override func viewDidLoad() {
@@ -45,50 +42,52 @@ final class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        recievedObjectsFromData?.count ?? 0
+        recievedObjectsFromData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let allElements = recievedObjectsFromData?[indexPath.row] else { fatalError("Не удалось отобразить ячейки") }
-        
-        switch allElements.name {
+        switch recievedObjectsFromData[indexPath.row].name {
         
         case .hz:
-            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellHz.cellId, for: indexPath) as! CustomCellHz
-            cell.label.text = allElements.data.text
+            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellHz.cellId,
+                                                                   for: indexPath) as! CustomCellHz
+            cell.label.text = recievedObjectsFromData[indexPath.row].data.text
             return cell
             
         case .picture:
-            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellPicture.cellId, for: indexPath) as! CustomCellPicture
+            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellPicture.cellId,
+                                                                   for: indexPath) as! CustomCellPicture
             
-            guard let dataString = allElements.data.url,
+            guard let dataString = recievedObjectsFromData[indexPath.row].data.url,
                   let url = URL(string: dataString)
             else { fatalError("Ошибка в создании ячейки с изображением") }
             
             cell.imageView.image = UIImage(data: try! Data(contentsOf: url))
-
+            
             return cell
             
         case .selector:
-            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellSelector.cellId, for: indexPath) as! CustomCellSelector
-            allElements.data.variants?.forEach{
-                cell.segmentedControl.insertSegment(action: alertToSelectedVariantInCell(withTitle: $0.text, variant: $0), at: $0.id, animated: true)}
+            let cell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: CustomCellSelector.cellId,
+                                                                   for: indexPath) as! CustomCellSelector
+            recievedObjectsFromData[indexPath.row].data.variants?.forEach{
+                cell.segmentedControl.insertSegment(action: alertToSelectedVariantInCell(withTitle: $0.text,
+                                                                                         variant: $0),
+                                                    at: $0.id,
+                                                    animated: true)}
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let allElements = recievedObjectsFromData?[indexPath.row] else { return }
-        
-        switch allElements.name {
+        switch recievedObjectsFromData[indexPath.row].name {
         
         case .hz:
-            alertToSelectedElementInCollectionView(withTitle: allElements.name.rawValue)
+            alertToSelectedElementInCollectionView(withTitle: recievedObjectsFromData[indexPath.row].name.rawValue)
             
         case .picture:
-            alertToSelectedElementInCollectionView(withTitle: allElements.name.rawValue)
+            alertToSelectedElementInCollectionView(withTitle: recievedObjectsFromData[indexPath.row].name.rawValue)
             
         default:
             break
@@ -101,7 +100,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 private extension MainViewController {
     
     func alertToSelectedElementInCollectionView(withTitle: String) {
-        let alertController = UIAlertController(title: "Объект \(withTitle) инициировал событие", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Объект \(withTitle) инициировал событие",
+                                                message: nil,
+                                                preferredStyle: .alert)
+        
         let alertAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(alertAction)
         present(alertController, animated: true)
@@ -112,7 +114,10 @@ private extension MainViewController {
                               attributes: .destructive,
                               state: .on,
                               handler: { _ in
-                                let alertController = UIAlertController(title: "id \(variant.id) инициировал событие", message: nil, preferredStyle: .alert)
+                                let alertController = UIAlertController(title: "id \(variant.id) инициировал событие",
+                                                                        message: nil,
+                                                                        preferredStyle: .alert)
+                                
                                 let alertAction = UIAlertAction(title: "OK", style: .default)
                                 alertController.addAction(alertAction)
                                 self.present(alertController, animated: true) })

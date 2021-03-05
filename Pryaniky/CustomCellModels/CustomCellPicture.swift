@@ -9,12 +9,9 @@ import UIKit
 
 final class CustomCellPicture: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupImage()
+    static var cellId: String {
+        self.description()
     }
-    
-    static let cellId = "cellPicture"
     
     let imageView: UIImageView = {
         let image = UIImageView()
@@ -25,7 +22,19 @@ final class CustomCellPicture: UICollectionViewCell {
         return image
     }()
     
-    private func setupImage() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupImage()
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension CustomCellPicture {
+    func setupImage() {
         addSubview(imageView)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
@@ -34,9 +43,4 @@ final class CustomCellPicture: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
-

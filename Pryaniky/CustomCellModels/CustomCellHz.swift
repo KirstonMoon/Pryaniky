@@ -9,13 +9,10 @@ import UIKit
 
 final class CustomCellHz: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setuplabel()
+    static var cellId: String {
+        self.description()
     }
     
-    static let cellId = "cellHz"
-
     let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -25,15 +22,24 @@ final class CustomCellHz: UICollectionViewCell {
         return label
     }()
     
-    private func setuplabel() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupLabel()
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension CustomCellHz {
+    
+    func setupLabel() {
         addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -8,16 +8,23 @@
 import UIKit
 
 final class MainView: UIView {
-
+    
+    var collectionView: UICollectionView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         setupCollectionView()
     }
     
-    var collectionView: UICollectionView!
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension MainView {
     
-    private func setupCollectionView() {
+    func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize.height = 100
         layout.itemSize.width = UIScreen.main.bounds.width / 2
@@ -37,9 +44,5 @@ final class MainView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
