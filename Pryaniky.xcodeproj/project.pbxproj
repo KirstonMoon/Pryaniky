@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2043699B25F14A7500FC92D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043699A25F14A7500FC92D3 /* AppDelegate.swift */; };
 		2043699D25F14A7500FC92D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043699C25F14A7500FC92D3 /* SceneDelegate.swift */; };
-		2043699F25F14A7500FC92D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043699E25F14A7500FC92D3 /* ViewController.swift */; };
-		204369A225F14A7500FC92D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204369A025F14A7500FC92D3 /* Main.storyboard */; };
+		2043699F25F14A7500FC92D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043699E25F14A7500FC92D3 /* MainViewController.swift */; };
 		204369A425F14A7600FC92D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 204369A325F14A7600FC92D3 /* Assets.xcassets */; };
 		204369A725F14A7600FC92D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204369A525F14A7600FC92D3 /* LaunchScreen.storyboard */; };
+		2072FB5625F14E1B00CE1FA7 /* ModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB5525F14E1B00CE1FA7 /* ModuleAssembler.swift */; };
+		2072FB5A25F14E5E00CE1FA7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB5925F14E5E00CE1FA7 /* Response.swift */; };
+		2072FB5F25F14E9100CE1FA7 /* CustomCellHz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB5E25F14E9100CE1FA7 /* CustomCellHz.swift */; };
+		2072FB6325F14EA800CE1FA7 /* CustomCellPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB6225F14EA800CE1FA7 /* CustomCellPicture.swift */; };
+		2072FB6625F14EB300CE1FA7 /* CustomCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB6525F14EB300CE1FA7 /* CustomCellSelector.swift */; };
+		2072FB6C25F14F1A00CE1FA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB6B25F14F1A00CE1FA7 /* MainView.swift */; };
+		2072FB7025F14F4000CE1FA7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072FB6F25F14F4000CE1FA7 /* MainViewModel.swift */; };
+		A4E74624E7ED1881E58DC0CD /* Pods_Pryaniky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B06FB09E4899C7B9BC7C94E /* Pods_Pryaniky.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2043699725F14A7500FC92D3 /* Pryaniky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryaniky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2043699A25F14A7500FC92D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2043699C25F14A7500FC92D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2043699E25F14A7500FC92D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		204369A125F14A7500FC92D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2043699E25F14A7500FC92D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		204369A325F14A7600FC92D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		204369A625F14A7600FC92D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		204369A825F14A7600FC92D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2072FB5525F14E1B00CE1FA7 /* ModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleAssembler.swift; sourceTree = "<group>"; };
+		2072FB5925F14E5E00CE1FA7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		2072FB5E25F14E9100CE1FA7 /* CustomCellHz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellHz.swift; sourceTree = "<group>"; };
+		2072FB6225F14EA800CE1FA7 /* CustomCellPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellPicture.swift; sourceTree = "<group>"; };
+		2072FB6525F14EB300CE1FA7 /* CustomCellSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSelector.swift; sourceTree = "<group>"; };
+		2072FB6B25F14F1A00CE1FA7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2072FB6F25F14F4000CE1FA7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5E9204956808CB2781B529A5 /* Pods-Pryaniky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pryaniky.release.xcconfig"; path = "Target Support Files/Pods-Pryaniky/Pods-Pryaniky.release.xcconfig"; sourceTree = "<group>"; };
+		6B06FB09E4899C7B9BC7C94E /* Pods_Pryaniky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pryaniky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1314E15A4EC40EEC955CEFF /* Pods-Pryaniky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pryaniky.debug.xcconfig"; path = "Target Support Files/Pods-Pryaniky/Pods-Pryaniky.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E74624E7ED1881E58DC0CD /* Pods_Pryaniky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ADCBA8981563EF2C4F169BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B06FB09E4899C7B9BC7C94E /* Pods_Pryaniky.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2043698E25F14A7500FC92D3 = {
 			isa = PBXGroup;
 			children = (
 				2043699925F14A7500FC92D3 /* Pryaniky */,
 				2043699825F14A7500FC92D3 /* Products */,
+				32CC1916B972A2A72D683888 /* Pods */,
+				0ADCBA8981563EF2C4F169BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +83,62 @@
 		2043699925F14A7500FC92D3 /* Pryaniky */ = {
 			isa = PBXGroup;
 			children = (
+				2072FB4F25F14D4F00CE1FA7 /* Application */,
+				2072FB5825F14E3000CE1FA7 /* NetworkModel */,
+				2072FB5D25F14E7500CE1FA7 /* CustomCellModels */,
+				2072FB6825F14EDB00CE1FA7 /* MainModule */,
+			);
+			path = Pryaniky;
+			sourceTree = "<group>";
+		};
+		2072FB4F25F14D4F00CE1FA7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				2043699A25F14A7500FC92D3 /* AppDelegate.swift */,
 				2043699C25F14A7500FC92D3 /* SceneDelegate.swift */,
-				2043699E25F14A7500FC92D3 /* ViewController.swift */,
-				204369A025F14A7500FC92D3 /* Main.storyboard */,
 				204369A325F14A7600FC92D3 /* Assets.xcassets */,
 				204369A525F14A7600FC92D3 /* LaunchScreen.storyboard */,
 				204369A825F14A7600FC92D3 /* Info.plist */,
+				2072FB5525F14E1B00CE1FA7 /* ModuleAssembler.swift */,
 			);
-			path = Pryaniky;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2072FB5825F14E3000CE1FA7 /* NetworkModel */ = {
+			isa = PBXGroup;
+			children = (
+				2072FB5925F14E5E00CE1FA7 /* Response.swift */,
+			);
+			path = NetworkModel;
+			sourceTree = "<group>";
+		};
+		2072FB5D25F14E7500CE1FA7 /* CustomCellModels */ = {
+			isa = PBXGroup;
+			children = (
+				2072FB5E25F14E9100CE1FA7 /* CustomCellHz.swift */,
+				2072FB6225F14EA800CE1FA7 /* CustomCellPicture.swift */,
+				2072FB6525F14EB300CE1FA7 /* CustomCellSelector.swift */,
+			);
+			path = CustomCellModels;
+			sourceTree = "<group>";
+		};
+		2072FB6825F14EDB00CE1FA7 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				2072FB6B25F14F1A00CE1FA7 /* MainView.swift */,
+				2043699E25F14A7500FC92D3 /* MainViewController.swift */,
+				2072FB6F25F14F4000CE1FA7 /* MainViewModel.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		32CC1916B972A2A72D683888 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1314E15A4EC40EEC955CEFF /* Pods-Pryaniky.debug.xcconfig */,
+				5E9204956808CB2781B529A5 /* Pods-Pryaniky.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 204369AB25F14A7600FC92D3 /* Build configuration list for PBXNativeTarget "Pryaniky" */;
 			buildPhases = (
+				F287970CE0F125FAB946BBE8 /* [CP] Check Pods Manifest.lock */,
 				2043699325F14A7500FC92D3 /* Sources */,
 				2043699425F14A7500FC92D3 /* Frameworks */,
 				2043699525F14A7500FC92D3 /* Resources */,
+				D18C1FE91E4FE6A3C7282E60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,34 +202,74 @@
 			files = (
 				204369A725F14A7600FC92D3 /* LaunchScreen.storyboard in Resources */,
 				204369A425F14A7600FC92D3 /* Assets.xcassets in Resources */,
-				204369A225F14A7500FC92D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D18C1FE91E4FE6A3C7282E60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pryaniky/Pods-Pryaniky-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pryaniky/Pods-Pryaniky-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pryaniky/Pods-Pryaniky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F287970CE0F125FAB946BBE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pryaniky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2043699325F14A7500FC92D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2043699F25F14A7500FC92D3 /* ViewController.swift in Sources */,
+				2072FB5F25F14E9100CE1FA7 /* CustomCellHz.swift in Sources */,
+				2072FB6C25F14F1A00CE1FA7 /* MainView.swift in Sources */,
+				2043699F25F14A7500FC92D3 /* MainViewController.swift in Sources */,
 				2043699B25F14A7500FC92D3 /* AppDelegate.swift in Sources */,
 				2043699D25F14A7500FC92D3 /* SceneDelegate.swift in Sources */,
+				2072FB7025F14F4000CE1FA7 /* MainViewModel.swift in Sources */,
+				2072FB5625F14E1B00CE1FA7 /* ModuleAssembler.swift in Sources */,
+				2072FB5A25F14E5E00CE1FA7 /* Response.swift in Sources */,
+				2072FB6325F14EA800CE1FA7 /* CustomCellPicture.swift in Sources */,
+				2072FB6625F14EB300CE1FA7 /* CustomCellSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		204369A025F14A7500FC92D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				204369A125F14A7500FC92D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		204369A525F14A7600FC92D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +399,13 @@
 		};
 		204369AC25F14A7600FC92D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1314E15A4EC40EEC955CEFF /* Pods-Pryaniky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65TNRYCD64;
-				INFOPLIST_FILE = Pryaniky/Info.plist;
+				INFOPLIST_FILE = Pryaniky/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +419,13 @@
 		};
 		204369AD25F14A7600FC92D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9204956808CB2781B529A5 /* Pods-Pryaniky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65TNRYCD64;
-				INFOPLIST_FILE = Pryaniky/Info.plist;
+				INFOPLIST_FILE = Pryaniky/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
