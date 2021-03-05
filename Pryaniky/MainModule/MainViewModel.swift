@@ -11,7 +11,6 @@ import Alamofire
 protocol MainViewModelProtocol: AnyObject {
     
     var dataDidSet: (([Objects]) -> Void)? { get set }
-    var allObjects: [Objects] { get }
     func loadData()
 }
 
@@ -20,7 +19,7 @@ final class MainViewModel: MainViewModelProtocol {
     private var networkService: DataRequest
     var dataDidSet: (([Objects]) -> Void)?
     
-    var allObjects = [Objects]() {
+    private var allObjects = [Objects]() {
         didSet {
             dataDidSet?(allObjects)
         }
