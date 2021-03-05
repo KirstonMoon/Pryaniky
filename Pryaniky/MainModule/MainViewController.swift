@@ -7,6 +7,13 @@
 
 import UIKit
 
+private enum Constants: String {
+    case questionMark = "questionmark"
+    case ok = "OK"
+    case objectInitiated = " объект инициировал событие"
+    case idInitiated = " id инициировал событие"
+}
+
 final class MainViewController: UIViewController {
     
     private let mainView = MainView()
@@ -64,7 +71,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let urlString = recievedObjectsFromData[indexPath.row].data.url,
                   let url = URL(string: urlString),
                   let data = try? Data(contentsOf: url)
-            else { cell.imageView.image = UIImage(systemName: "questionmark"); return cell }
+            else { cell.imageView.image = UIImage(systemName: Constants.questionMark.rawValue); return cell }
             
             cell.imageView.image = UIImage(data: data)
             
@@ -103,11 +110,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 private extension MainViewController {
     
     func alertToSelectedElementInCollectionView(withTitle: String) {
-        let alertController = UIAlertController(title: "Объект \(withTitle) инициировал событие",
+        let alertController = UIAlertController(title: withTitle + Constants.objectInitiated.rawValue,
                                                 message: nil,
                                                 preferredStyle: .alert)
         
-        let alertAction = UIAlertAction(title: "OK", style: .default)
+        let alertAction = UIAlertAction(title: Constants.ok.rawValue, style: .default)
         alertController.addAction(alertAction)
         present(alertController, animated: true)
     }
@@ -117,11 +124,11 @@ private extension MainViewController {
                               attributes: .destructive,
                               state: .on,
                               handler: { _ in
-                                let alertController = UIAlertController(title: "id \(variant.id) инициировал событие",
+                                let alertController = UIAlertController(title: variant.id.description + Constants.idInitiated.rawValue,
                                                                         message: nil,
                                                                         preferredStyle: .alert)
 
-                                let alertAction = UIAlertAction(title: "OK", style: .default)
+                                let alertAction = UIAlertAction(title: Constants.ok.rawValue, style: .default)
                                 alertController.addAction(alertAction)
                                 self.present(alertController, animated: true) })
         return action
